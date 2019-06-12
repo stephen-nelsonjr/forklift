@@ -1,0 +1,22 @@
+---
+centos7-foreman-proxy-dev:
+    box_name: 'centos/7'
+    image_name: !ruby/regexp '/CentOS 7.*PV/'
+    ansible:
+      playbook: 'playbooks/foreman_proxy_devel.yml'
+      group: 'devel'
+      variables:
+        ssh_forward_agent: true
+        foreman_devel_github_push_ssh: True
+        foreman_devel_github_username: 'stephen-nelsonjr' 
+
+centos7-foreman-dev:
+  box_name: 'centos/7'
+  image_name: !ruby/regexp '/CentOS 7.*PV/'
+  ansible:
+    playbook: 'playbooks/foreman.yml'
+    group: 'devel'
+    variables:
+      ssh_forward_agent: true
+      foreman_devel_github_push_ssh: True
+      foreman_devel_github_username: 'stephen-nelsonjr' 
