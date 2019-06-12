@@ -1,13 +1,13 @@
 ---
-- name: Install dependencies
-   yum: 
-      name: "{{ item }}" 
-      state: present
-   with_items: "{{ packages }}"
+# - name: Install dependencies
+#    yum: 
+#       name: "{{ item }}" 
+#       state: present
+#    with_items: "{{ packages }}"
 
 - name: 'Clone Proxy'
     git:
       repo: "{{ proxy_url }}"
-      dest: '~'
+      dest: '~/home/vagrant'
       clone: yes
 
