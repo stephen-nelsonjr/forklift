@@ -3,8 +3,9 @@
   become: true
   vars:
     - proxy_url: "https://github.com/stephen-nelsonjr/smart_proxy_example"
-    # - packages: ["git"]
   roles:
-    - role: foreman_proxy_devel
     - role: git
+    - role: ruby_scl
+    - role: foreman_proxy_devel
+
  

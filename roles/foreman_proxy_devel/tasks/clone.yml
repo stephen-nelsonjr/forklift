@@ -1,13 +1,17 @@
 ---
-# - name: Install dependencies
-#    yum: 
-#       name: "{{ item }}" 
-#       state: present
-#    with_items: "{{ packages }}"
-
-- name: 'Clone Proxy'
+- name: "Clone Proxy from git"
     git:
-      repo: "{{ proxy_url }}"
-      dest: '~/home/vagrant'
+      repo: https://github.com/stephen-nelsonjr/smart_proxy_example.git
+      dest: "/Project"
       clone: yes
 
+- name: "Change directory to smart proxy"
+    shell: |
+      cd smart_proxy_example
+
+- name: "Bundle install"
+    shell: |
+      bundle install
+
+
+  
